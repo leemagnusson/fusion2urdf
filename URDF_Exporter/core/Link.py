@@ -49,7 +49,7 @@ class Link:
         """
         
         link = Element('link')
-        link.attrib = {'name':self.name}
+        link.attrib = {'name': "$(arg tf_prefix)" + self.name}
         
         #inertial
         inertial = SubElement(link, 'inertial')

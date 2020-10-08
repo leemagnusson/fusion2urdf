@@ -140,6 +140,8 @@ def write_urdf(joints_dict, links_xyz_dict, inertial_dict, appearance_dict, pack
         f.write('\n')
         f.write('<xacro:include filename="$(find {})/urdf/{}.gazebo" />'.format(package_name, robot_name))
         f.write('\n')
+        f.write('<xacro:arg name="tf_prefix" default=""/>'.format(package_name, robot_name))
+        f.write('\n')
 
     write_link_urdf(joints_dict, repo, links_xyz_dict, file_name, inertial_dict, appearance_dict, root_name)
     write_joint_urdf(joints_dict, repo, links_xyz_dict, file_name)
